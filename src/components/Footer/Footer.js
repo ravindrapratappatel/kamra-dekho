@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{memo} from 'react';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Footer() {
+  console.log("footer")
   const date= new Date();
   const year= date.getFullYear();
   return (
@@ -24,4 +25,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default memo(Footer)

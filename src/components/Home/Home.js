@@ -34,14 +34,12 @@ function Home() {
           <CircularProgress className="flex self-center" />
         ) : ( room.length>=1 ?
           room.map((item) => {
-            return (
+            return (  <div key={item.roomid} className='m-0 sm:w-1/3'>
               <Cards
                 key={item.roomid}
-                url={item.url}
-                price={item.price}
-                type={item.price}
-                location={item.location}
+                item ={item}
               />
+              </div>
             );
           }) : <h4 className="self-center">No room found</h4>
         )}

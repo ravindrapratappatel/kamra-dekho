@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, memo} from 'react'
 import CancelIcon from '@mui/icons-material/Cancel';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router-dom';
@@ -6,6 +6,7 @@ import bgimg from '../../assets/room.webp'
 import {useDispatch, useSelector} from 'react-redux'
 import {logout} from '../../actions/auth'
 function Navbar() {
+  console.log("navbar")
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector(state => state.auth);
   const [nav, setnav] = useState(false);
@@ -92,4 +93,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default memo(Navbar)

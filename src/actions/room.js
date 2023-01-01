@@ -1,4 +1,4 @@
-import { ROOM_REQUEST, ROOM_REQUEST_FAIL, ROOM_REQUEST_SUCCESS} from "./type";
+import { ROOM_REQUEST, ROOM_REQUEST_FAIL, ROOM_REQUEST_SUCCESS, SET_CLICKED_ROOM} from "./type";
 import UserService from "../services/room.service";
 
 export const getrooms = () => async (dispatch) => {
@@ -34,3 +34,8 @@ export const getrooms = () => async (dispatch) => {
     })
   })
  }
+
+export const setroom = (data) => ({
+  type: SET_CLICKED_ROOM,
+  payload: data,
+});

@@ -1,7 +1,8 @@
-import { ROOM_REQUEST, ROOM_REQUEST_FAIL, ROOM_REQUEST_SUCCESS} from "../actions/type";
+import { ROOM_REQUEST, ROOM_REQUEST_FAIL, ROOM_REQUEST_SUCCESS, SET_CLICKED_ROOM} from "../actions/type";
 const initialState = {
   loading : true,
-  room : []
+  room : [],
+  selectedRoom : {}
 };
 export default function (state = initialState, action) {
   const { type, payload } = action;
@@ -12,6 +13,8 @@ export default function (state = initialState, action) {
     return {...state, room : payload, loading: false};
     case ROOM_REQUEST_FAIL:
       return {...state, loading: false }
+    case SET_CLICKED_ROOM : 
+    return {...state, selectedRoom: payload}  
     default:
       return state;
   }
